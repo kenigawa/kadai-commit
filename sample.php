@@ -1,5 +1,14 @@
 <?php
     $result = '無し';
+    if(array_key_exists('act', $_POST)){
+        $result = omikuji();
+    }
+
+    function omikuji() {
+        $fortune = ["大吉", "吉", "中吉", "小吉", "末吉", "凶"];
+        // count = fortune配列の数量
+        return $fortune[random_int(0, count($fortune) -1)];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
